@@ -39,17 +39,17 @@ export default function Hero() {
       <div className="container hero-content">
         <div className="hero-eyebrow">
           <span className="material-icons-round">workspace_premium</span>
-          UX Case Study · Global E-commerce Platform
+          UX Case Study · Entrepreneur E-commerce Platform
         </div>
 
         <h1 className="hero-headline">
-          I used <em>human psychology</em><br />
-          to reverse a $200M<br />
-          company's digital decline.
+          UX with<em>human psychology</em><br />
+          to build beter product interactions<br />
+          which reversed a steady decline.
         </h1>
 
         <p className="hero-sub">
-          As the first UX hire, I built a UX practice from zero, applied behavioral psychology across 3 platforms, and transformed measurable business outcomes — all rooted in established cognitive science.
+          Applied behavioral psychology from UX standards across 3 company platforms, and transformed measurable business outcomes — all rooted in established behavorial science.
         </p>
 
         <div className="hero-tags">
