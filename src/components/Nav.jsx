@@ -38,7 +38,7 @@ export default function Nav() {
     <>
       <div id="progress-bar" style={{ width: `${scrollPct}%` }} />
       <nav>
-        <a className="nav-logo" href="#hero">Christopher Kaye</a>
+        <a className="nav-logo" href="#hero">Christopher Kenreigh</a>
         <ul className="nav-links">
           {sections.map(s => (
             <li key={s.id}>
