@@ -43,8 +43,8 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-headline">
-          UX with<em>human psychology</em><br />
-          to build beter product interactions<br />
+          UX with <em>human psychology</em><br />
+          improved user interactions<br />
           which reversed a steady decline.
         </h1>
 
