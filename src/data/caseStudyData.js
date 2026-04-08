@@ -17,7 +17,7 @@ export const uxLaws = [
     description: "The time it takes to make a decision increases with the number and complexity of choices.",
     platform: ["website", "dashboard"],
     improvement: "Simplified navigation from 18 top-level items to 5, reducing decision fatigue on the acquisition website and ambassador dashboard.",
-    outcome: "Conversion rate +33pts",
+    outcome: "Conversion rate +13%",
     color: "#0F7AEB",
     x: 20, y: 18
   },
@@ -50,7 +50,7 @@ export const uxLaws = [
     description: "The average person can only keep 7 (plus or minus 2) items in their working memory.",
     platform: ["portal", "dashboard"],
     improvement: "Chunked account portal information into digestible groups. Reduced dashboard widgets per view to ≤7.",
-    outcome: "Signup completion +11pts",
+    outcome: "Signup completion +33%",
     color: "#E17055",
     x: 25, y: 55
   },
@@ -223,7 +223,7 @@ export const platforms = [
       metric: "68% conversion rate"
     },
     laws: ["hicks", "fitts", "pareto"],
-    impact: "+33pts conversion"
+    impact: "+13% conversion"
   },
   {
     id: "portal",
