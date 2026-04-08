@@ -9,7 +9,7 @@ import MaturitySection from './components/MaturitySection'
 function Footer() {
   return (
     <footer>
-      <div className="footer-name">Christopher Kaye</div>
+      <div className="footer-name">Christopher Kenreigh</div>
       <p>Principal Product Designer · UX Strategy & Design Ops</p>
       <p style={{ marginTop: 8, fontSize: 11, opacity: 0.4 }}>© 2025 · Built with Vite + React</p>
     </footer>
