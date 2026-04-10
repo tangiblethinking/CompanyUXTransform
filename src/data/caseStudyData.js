@@ -22,6 +22,7 @@ export const uxLaws = [
     x: 20, y: 18,
     // IMAGE URLS — replace these placeholders with your own hosted image links
     imagePlatforms: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -35,6 +36,7 @@ export const uxLaws = [
     color: "#6C63FF",
     x: 72, y: 12,
     imagePlatforms: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -48,6 +50,7 @@ export const uxLaws = [
     color: "#00B894",
     x: 48, y: 8,
     imagePlatforms: "https://placehold.co/480x220/f0fff8/00B894?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/f0fff8/00B894?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -61,6 +64,7 @@ export const uxLaws = [
     color: "#E17055",
     x: 25, y: 55,
     imagePlatforms: "https://placehold.co/480x220/fff5f0/E17055?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/fff5f0/E17055?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -74,6 +78,7 @@ export const uxLaws = [
     color: "#0F7AEB",
     x: 76, y: 48,
     imagePlatforms: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -87,6 +92,7 @@ export const uxLaws = [
     color: "#6C63FF",
     x: 50, y: 75,
     imagePlatforms: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -100,6 +106,7 @@ export const uxLaws = [
     color: "#00B894",
     x: 82, y: 75,
     imagePlatforms: "https://placehold.co/480x220/f0fff8/00B894?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/f0fff8/00B894?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
@@ -113,6 +120,7 @@ export const uxLaws = [
     color: "#E17055",
     x: 15, y: 82,
     imagePlatforms: "https://placehold.co/480x220/fff5f0/E17055?text=Platforms+Applied+Image",
+    platformSheetImage: "https://placehold.co/480x220/fff5f0/E17055?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
 ];
