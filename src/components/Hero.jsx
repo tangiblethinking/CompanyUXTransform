@@ -49,7 +49,7 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub">
-          Applied behavioral psychology from UX standards across 3 company verticals, and transformed measurable business outcomes — all rooted in established behavorial science.
+          Applied behavioral psychology from UX standards across 3 company verticals (Website, Customer Portal, Back Offeice Tools) and transformed measurable business outcomes — all rooted in established behavorial science.
         </p>
 
         <div className="hero-tags">
