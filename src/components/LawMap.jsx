@@ -161,14 +161,17 @@ export default function LawMap() {
       >
         {selected && (
           <div>
+
+            {/* The Principle */}
             <div style={{ padding: '16px', borderRadius: 12, background: `${selected.color}08`, border: `1px solid ${selected.color}22`, marginBottom: 24 }}>
               <div style={{ fontSize: 13, fontWeight: 600, color: selected.color, marginBottom: 6 }}>The Principle</div>
               <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{selected.description}</p>
             </div>
 
-            <div style={{ marginBottom: 20 }}>
+            {/* Platforms Applied */}
+            <div style={{ marginBottom: 12 }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>Platforms Applied</div>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
                 {selected.platform.map(p => {
                   const colors = { website: '#0F7AEB', portal: '#6C63FF', dashboard: '#00B894' }
                   const labels = { website: 'Acquisition Website', portal: 'Account Portal', dashboard: 'Ambassador Dashboard' }
@@ -179,20 +182,45 @@ export default function LawMap() {
                   )
                 })}
               </div>
+              {/* ── IMAGE 1 — appears below "Platforms Applied" chips ─────────────────
+                  To update: edit imagePlatforms for this law in src/data/caseStudyData.js */}
+              {selected.imagePlatforms && (
+                <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)' }}>
+                  <img
+                    src={selected.imagePlatforms}
+                    alt={`${selected.name} — platforms applied`}
+                    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                  />
+                </div>
+              )}
             </div>
 
-            <div style={{ marginBottom: 20 }}>
+            {/* What We Changed */}
+            <div style={{ marginBottom: 12, marginTop: 20 }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>What We Changed</div>
-              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{selected.improvement}</p>
+              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7, marginBottom: 16 }}>{selected.improvement}</p>
+              {/* ── IMAGE 2 — appears below the "What We Changed" paragraph ──────────
+                  To update: edit imageAfter for this law in src/data/caseStudyData.js */}
+              {selected.imageAfter && (
+                <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)' }}>
+                  <img
+                    src={selected.imageAfter}
+                    alt={`${selected.name} — after improvement`}
+                    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                  />
+                </div>
+              )}
             </div>
 
-            <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 12 }}>
+            {/* Measured Outcome */}
+            <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
               <span className="material-icons-round" style={{ color: '#00B894', fontSize: 20 }}>trending_up</span>
               <div>
                 <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, marginBottom: 2 }}>MEASURED OUTCOME</div>
                 <div style={{ fontSize: 16, fontWeight: 700, color: '#00B894' }}>{selected.outcome}</div>
               </div>
             </div>
+
           </div>
         )}
       </SideSheet>
