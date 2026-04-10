@@ -133,7 +133,12 @@ export const phases = [
       "0 standardized UI components across platforms",
       "Zero formal research or usability testing in place",
       "Support volume exceeding 1,000 tickets/week"
-    ]
+    ],
+    // IMAGE URLS — replace placeholders with your own hosted image links
+    // imageTop    → appears at the very top of the side sheet, above Deep Dive text
+    // imageBottom → appears below the Deep Dive paragraph, above Key Deliverables
+    imageTop: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Phase+1+Top+Image",
+    imageBottom: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Phase+1+Bottom+Image",
   },
   {
     id: 2,
@@ -150,7 +155,9 @@ export const phases = [
       "Replaced fragmented contractor model with internal ownership",
       "Introduced Double Diamond + Design Thinking framework",
       "Established UX within agile product development cycles"
-    ]
+    ],
+    imageTop: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Phase+2+Top+Image",
+    imageBottom: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Phase+2+Bottom+Image",
   },
   {
     id: 3,
@@ -167,7 +174,9 @@ export const phases = [
       "Usability testing sessions with recorded sessions",
       "Persona development and journey mapping workshops",
       "Funnel analysis and heatmap behavioral overlays"
-    ]
+    ],
+    imageTop: "https://placehold.co/480x220/f0fff8/00B894?text=Phase+3+Top+Image",
+    imageBottom: "https://placehold.co/480x220/f0fff8/00B894?text=Phase+3+Bottom+Image",
   },
   {
     id: 4,
@@ -184,7 +193,9 @@ export const phases = [
       "UX integrated into all agile sprint cycles",
       "Analytics + experimentation framework introduced",
       "Cross-functional design review cadence established"
-    ]
+    ],
+    imageTop: "https://placehold.co/480x220/fff5f0/E17055?text=Phase+4+Top+Image",
+    imageBottom: "https://placehold.co/480x220/fff5f0/E17055?text=Phase+4+Bottom+Image",
   },
   {
     id: 5,
@@ -201,7 +212,9 @@ export const phases = [
       "Account portal: chunked workflows, reduced cognitive load (Miller's Law)",
       "Ambassador dashboard: KPI hierarchy, data discoverability (Von Restorff)",
       "All platforms aligned to shared design system"
-    ]
+    ],
+    imageTop: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Phase+5+Top+Image",
+    imageBottom: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Phase+5+Bottom+Image",
   },
   {
     id: 6,
@@ -218,7 +231,9 @@ export const phases = [
       "Executive recognition of UX as revenue-driving discipline",
       "Sustainable product process established over campaign speed",
       "UX maturity: Level 0 → Level 3 (Structured & Proactive)"
-    ]
+    ],
+    imageTop: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Phase+6+Top+Image",
+    imageBottom: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Phase+6+Bottom+Image",
   }
 ];
 
