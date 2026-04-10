@@ -39,7 +39,7 @@ export default function Hero() {
       <div className="container hero-content">
         <div className="hero-eyebrow">
           <span className="material-icons-round">workspace_premium</span>
-          UX Case Study · Entrepreneur E-commerce Platform
+          UX Case Study · Entrepreneur E-commerce Experience
         </div>
 
         <h1 className="hero-headline">
@@ -49,14 +49,14 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub">
-          Applied behavioral psychology from UX standards across 3 company platforms, and transformed measurable business outcomes — all rooted in established behavorial science.
+          Applied behavioral psychology from UX standards across 3 company verticals, and transformed measurable business outcomes — all rooted in established behavorial science.
         </p>
 
         <div className="hero-tags">
           {[
             { icon: 'person', label: 'First UX Hire' },
             { icon: 'groups', label: 'Team of 3 Built' },
-            { icon: 'devices', label: '3 Platforms Redesigned' },
+            { icon: 'devices', label: '3 Verticals Redesigned' },
             { icon: 'psychology', label: '8 UX Laws Applied' },
             { icon: 'attach_money', label: '$200–500M Revenue Scale' },
           ].map(t => (
@@ -69,7 +69,7 @@ export default function Hero() {
 
         <div className="hero-stat-row">
           <div className="hero-stat">
-            <div className="hero-stat-val">33pts</div>
+            <div className="hero-stat-val">33%</div>
             <div className="hero-stat-label">Conversion lift</div>
           </div>
           <div className="hero-stat">
