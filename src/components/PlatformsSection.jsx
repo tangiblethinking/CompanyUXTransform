@@ -139,33 +139,48 @@ export default function PlatformsSection() {
         open={!!sheet}
         onClose={() => setSheet(null)}
         title={sheet?.name || sheet?.label}
-        subtitle={sheet?.role ? 'Platform Details' : 'UX Law Applied'}
+        subtitle={sheet?.role ? 'Platform Details' : 'UX Law'}
         color={sheet?.color}
       >
         {sheet && (
           <div>
-            {/* UX Law sheet */}
+
+            {/* ── UX LAW SHEET ─────────────────────────────────────────────────── */}
             {sheet.description && (
               <>
-                <div style={{ padding: '16px', borderRadius: 12, background: `${sheet.color}08`, border: `1px solid ${sheet.color}22`, marginBottom: 20 }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: sheet.color, marginBottom: 6 }}>The Principle</div>
+                {/* IMAGE — top of sheet, above all text
+                    ┌─────────────────────────────────────────────────────────────┐
+                    │ To update: open src/data/caseStudyData.js                  │
+                    │ Find the law by id (e.g. id: "jakob") in the uxLaws array  │
+                    │ Replace the imagePlatforms value with your image URL        │
+                    └─────────────────────────────────────────────────────────────┘ */}
+                {sheet.imagePlatforms && (
+                  <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)', lineHeight: 0, marginBottom: 20 }}>
+                    <img
+                      src={sheet.imagePlatforms}
+                      alt={`${sheet.name} — applied`}
+                      style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
+
+                {/* Description — plain surface card, no colour tint, no label */}
+                <div style={{ padding: '16px', borderRadius: 12, background: 'var(--surface)', border: '1px solid var(--ink-12)', marginBottom: 16 }}>
                   <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{sheet.description}</p>
                 </div>
-                <div style={{ marginBottom: 20 }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>Application</div>
-                  <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{sheet.improvement}</p>
-                </div>
-                <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 12 }}>
+
+                {/* Outcome — light surface card */}
+                <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--surface)', border: '1px solid var(--ink-12)', display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span className="material-icons-round" style={{ color: '#00B894', fontSize: 20 }}>trending_up</span>
                   <div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, marginBottom: 2 }}>OUTCOME</div>
+                    <div style={{ fontSize: 11, color: 'var(--ink-40)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: 2 }}>Outcome</div>
                     <div style={{ fontSize: 16, fontWeight: 700, color: '#00B894' }}>{sheet.outcome}</div>
                   </div>
                 </div>
               </>
             )}
 
-            {/* Platform sheet */}
+            {/* ── PLATFORM SHEET ───────────────────────────────────────────────── */}
             {sheet.before && (
               <>
                 <div style={{ marginBottom: 20 }}>
@@ -190,15 +205,16 @@ export default function PlatformsSection() {
                     ))}
                   </ul>
                 </div>
-                <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--surface)', border: '1px solid var(--ink-12)', display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span className="material-icons-round" style={{ color: '#00B894', fontSize: 20 }}>trending_up</span>
                   <div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', fontWeight: 600, marginBottom: 2 }}>NET IMPACT</div>
+                    <div style={{ fontSize: 11, color: 'var(--ink-40)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: 2 }}>Net Impact</div>
                     <div style={{ fontSize: 18, fontWeight: 700, color: '#00B894' }}>{sheet.impact}</div>
                   </div>
                 </div>
               </>
             )}
+
           </div>
         )}
       </SideSheet>
