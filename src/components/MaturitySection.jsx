@@ -1,6 +1,41 @@
 import { useRef, useEffect, useState } from 'react'
 import SideSheet from './SideSheet'
 
+// ─────────────────────────────────────────────────────────────────────────────
+// IMAGE URLS FOR MATURITY STAGE SIDE SHEETS
+//
+// File : src/components/MaturitySection.jsx  (this file)
+//
+//   stageImages[0]  → line 14   Level 0: Development-Driven
+//   stageImages[1]  → line 15   Level 1: UX Awareness
+//   stageImages[2]  → line 16   Level 2: Research-Informed
+//   stageImages[3]  → line 17   Level 3: Structured & Proactive
+//
+// Replace the empty string with your hosted image URL e.g.:
+//   "https://cdn.example.com/maturity-0.jpg"
+// ─────────────────────────────────────────────────────────────────────────────
+const stageImages = {
+  0: "",
+  1: "",
+  2: "",
+  3: "",
+}
+
+// Checkerboard placeholder — renders when stageImages[num] is empty
+const Placeholder = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="220" style={{ display: 'block' }}>
+    <defs>
+      <pattern id="chk" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <rect width="20" height="20" fill="#e2e5ec" />
+        <rect x="20" width="20" height="20" fill="#eceef2" />
+        <rect y="20" width="20" height="20" fill="#eceef2" />
+        <rect x="20" y="20" width="20" height="20" fill="#e2e5ec" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="220" fill="url(#chk)" />
+  </svg>
+)
+
 const stages = [
   {
     num: 0,
@@ -42,6 +77,7 @@ const stages = [
 
 function MaturityBar({ stage, animate }) {
   const [sheet, setSheet] = useState(false)
+  const imageUrl = stageImages[stage.num]
 
   return (
     <div className="maturity-stage">
@@ -87,15 +123,53 @@ function MaturityBar({ stage, animate }) {
           color={stage.color}
         >
           <div>
-            <div style={{ padding: '16px', borderRadius: 12, background: `${stage.color}08`, border: `1px solid ${stage.color}22`, marginBottom: 20 }}>
-              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{stage.detail}</p>
+
+            {/* ── IMAGE — top of side sheet ─────────────────────────────────────
+                File : src/components/MaturitySection.jsx
+                Find : const stageImages = { ... }
+                Edit : replace "" next to this stage's number with your image URL
+                ──────────────────────────────────────────────────────────────── */}
+            <div style={{
+              borderRadius: 12,
+              overflow: 'hidden',
+              border: '1px solid var(--ink-12)',
+              background: 'var(--surface)',
+              lineHeight: 0,
+              marginBottom: 20,
+            }}>
+              {imageUrl
+                ? <img
+                    src={imageUrl}
+                    alt={stage.label}
+                    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+                  />
+                : <Placeholder />
+              }
             </div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>State at This Stage</div>
+
+            {/* Detail text — plain surface card */}
+            <div style={{
+              padding: '16px',
+              borderRadius: 12,
+              background: 'var(--surface)',
+              border: '1px solid var(--ink-12)',
+              marginBottom: 20,
+            }}>
+              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7, margin: 0 }}>
+                {stage.detail}
+              </p>
+            </div>
+
+            {/* State at This Stage */}
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>
+              State at This Stage
+            </div>
             <ul className="phase-bullets">
               {stage.bullets.map((b, i) => (
                 <li key={i} style={{ color: 'var(--ink-80)', fontSize: 14, marginBottom: 6 }}>{b}</li>
               ))}
             </ul>
+
           </div>
         </SideSheet>
       </div>
@@ -144,16 +218,17 @@ export default function MaturitySection() {
           ))}
         </div>
 
-        {/* Impact summary */}
+        {/* Impact summary — light surface card matching page 3 target */}
         <div style={{
           marginTop: 56,
           padding: '32px',
-          background: 'var(--ink)',
+          background: 'var(--surface)',
+          border: '1px solid var(--ink-12)',
           borderRadius: 20,
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           gap: 24
-        }} className="fade-up" style2={{ transitionDelay: '400ms' }}>
+        }} className="fade-up">
           {[
             { icon: 'person', label: 'UX Team Built', val: '3', sub: 'from 0' },
             { icon: 'psychology', label: 'UX Laws Applied', val: '8', sub: 'across 3 platforms' },
@@ -161,10 +236,10 @@ export default function MaturitySection() {
             { icon: 'support_agent', label: 'Support Reduced', val: '–92%', sub: '1000+ → <75/wk' },
           ].map(item => (
             <div key={item.label} style={{ textAlign: 'center' }}>
-              <span className="material-icons-round" style={{ fontSize: 24, color: 'rgba(255,255,255,0.3)', marginBottom: 8, display: 'block' }}>{item.icon}</span>
+              <span className="material-icons-round" style={{ fontSize: 24, color: 'var(--ink-40)', marginBottom: 8, display: 'block' }}>{item.icon}</span>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 32, color: '#00B894', lineHeight: 1 }}>{item.val}</div>
-              <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.7)', marginTop: 4 }}>{item.label}</div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 2 }}>{item.sub}</div>
+              <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--ink-80)', marginTop: 4 }}>{item.label}</div>
+              <div style={{ fontSize: 11, color: 'var(--ink-40)', marginTop: 2 }}>{item.sub}</div>
             </div>
           ))}
         </div>
