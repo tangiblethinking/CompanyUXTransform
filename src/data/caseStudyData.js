@@ -21,7 +21,7 @@ export const uxLaws = [
     color: "#0F7AEB",
     x: 20, y: 18,
     // IMAGE URLS — replace these placeholders with your own hosted image links
-    imagePlatforms: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platforms+Applied+Image",
+    imagePlatforms: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/45da0809-b24d-4b13-b231-772f6babe6c0.png?h=0f40e3ba365a92fc80425832236eba8b",
     platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
