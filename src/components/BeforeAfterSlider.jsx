@@ -79,25 +79,29 @@ export default function BeforeAfterSlider({ beforeSrc, afterSrc, height = 220 })
         }
       </div>
 
-      {/* Before label */}
-      <div style={{
-        position: 'absolute', top: 12, left: 12,
-        background: 'rgba(13,17,23,0.75)', color: '#fff',
-        fontSize: 11, fontWeight: 700, letterSpacing: '0.8px',
-        padding: '3px 10px', borderRadius: 100,
-      }}>
-        Before
-      </div>
+      {/* Before chip — shows when before image is >= 50% visible (pct <= 50) */}
+      {pct <= 50 && (
+        <div style={{
+          position: 'absolute', top: 12, left: 12,
+          background: 'rgba(13,17,23,0.75)', color: '#fff',
+          fontSize: 11, fontWeight: 700, letterSpacing: '0.8px',
+          padding: '3px 10px', borderRadius: 100,
+        }}>
+          Before
+        </div>
+      )}
 
-      {/* After label */}
-      <div style={{
-        position: 'absolute', top: 12, right: 12,
-        background: 'rgba(13,17,23,0.75)', color: '#fff',
-        fontSize: 11, fontWeight: 700, letterSpacing: '0.8px',
-        padding: '3px 10px', borderRadius: 100,
-      }}>
-        After
-      </div>
+      {/* After chip — shows when after image is >= 50% visible (pct >= 50) */}
+      {pct >= 50 && (
+        <div style={{
+          position: 'absolute', top: 12, right: 12,
+          background: 'rgba(13,17,23,0.75)', color: '#fff',
+          fontSize: 11, fontWeight: 700, letterSpacing: '0.8px',
+          padding: '3px 10px', borderRadius: 100,
+        }}>
+          After
+        </div>
+      )}
 
       {/* Divider line */}
       <div style={{
