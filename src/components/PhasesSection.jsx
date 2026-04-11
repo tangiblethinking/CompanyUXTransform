@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 import { phases, uxLaws } from '../data/caseStudyData'
 import SideSheet from './SideSheet'
+import LawSideSheet from './LawSideSheet'
 
 export default function PhasesSection() {
   const [expanded, setExpanded] = useState(null)
-  const [sheet, setSheet] = useState(null)
+  const [phaseSheet, setPhaseSheet] = useState(null)  // opened by "Full phase details"
+  const [lawSheet, setLawSheet] = useState(null)      // opened by law chips
   const [vis, setVis] = useState(false)
   const ref = useRef(null)
 
@@ -47,10 +49,6 @@ export default function PhasesSection() {
                 <div className="phase-dot" style={{ background: phase.color }}>
                   <span className="material-icons-round">{phase.icon}</span>
                 </div>
-                {/* Mobile label */}
-                <div className="phase-mobile-label" style={{ display: 'none' }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: phase.color }}>{phase.label}</span>
-                </div>
               </div>
 
               <div
@@ -78,6 +76,8 @@ export default function PhasesSection() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Law chips — open LawSideSheet */}
                   <div className="phase-laws-row">
                     {phase.laws.map(lawId => {
                       const law = getLaw(lawId)
@@ -87,16 +87,18 @@ export default function PhasesSection() {
                           key={lawId}
                           className="phase-law-chip"
                           style={{ background: law.color, cursor: 'pointer' }}
-                          onClick={e => { e.stopPropagation(); setSheet(law) }}
+                          onClick={e => { e.stopPropagation(); setLawSheet(law) }}
                         >
                           {law.name}
                         </span>
                       )
                     })}
                   </div>
+
+                  {/* Full phase details — opens phase SideSheet */}
                   <div
                     className="info-cta"
-                    onClick={e => { e.stopPropagation(); setSheet(phases.find(p => p.id === phase.id)) }}
+                    onClick={e => { e.stopPropagation(); setPhaseSheet(phase) }}
                   >
                     <span className="material-icons-round">open_in_new</span>
                     Full phase details
@@ -108,80 +110,66 @@ export default function PhasesSection() {
         </div>
       </div>
 
+      {/* ── LawSideSheet: opened by law chips (image + description + outcome) ── */}
+      <LawSideSheet
+        law={lawSheet}
+        open={!!lawSheet}
+        onClose={() => setLawSheet(null)}
+      />
+
+      {/* ── Phase SideSheet: opened by "Full phase details" CTA ── */}
       <SideSheet
-        open={!!sheet}
-        onClose={() => setSheet(null)}
-        title={sheet?.name || sheet?.title}
-        subtitle={sheet?.subtitle || 'UX Law'}
-        color={sheet?.color}
+        open={!!phaseSheet}
+        onClose={() => setPhaseSheet(null)}
+        title={phaseSheet?.title}
+        subtitle={phaseSheet?.subtitle}
+        color={phaseSheet?.color}
       >
-        {sheet && (
+        {phaseSheet && (
           <div>
 
-            {/* ── IMAGE TOP — very first element, above all text ────────────────────
-                To update: set imageTop for this phase in src/data/caseStudyData.js */}
-            {sheet.imageTop && (
+            {/* Image Top */}
+            {phaseSheet.imageTop && (
               <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)', lineHeight: 0, marginBottom: 24 }}>
                 <img
-                  src={sheet.imageTop}
-                  alt={`${sheet.title} — overview`}
+                  src={phaseSheet.imageTop}
+                  alt={phaseSheet.title}
                   style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
                 />
               </div>
             )}
 
             {/* Deep Dive */}
-            {sheet.details && (
+            {phaseSheet.details && (
               <div style={{ marginBottom: 20 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>Deep Dive</div>
-                <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{sheet.details}</p>
+                <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{phaseSheet.details}</p>
               </div>
             )}
 
-            {/* UX Law content (when sheet is a law, not a phase) */}
-            {sheet.description && (
-              <div style={{ padding: '16px', borderRadius: 12, background: `${sheet.color}08`, border: `1px solid ${sheet.color}22`, marginBottom: 20 }}>
-                <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{sheet.description}</p>
-              </div>
-            )}
+            {/* Divider */}
+            <hr style={{ border: 'none', borderTop: '1px solid var(--ink-12)', margin: '20px 0' }} />
 
-            {/* Divider between text block and second image */}
-            {(sheet.imageTop || sheet.details) && sheet.imageBottom && (
-              <hr style={{ border: 'none', borderTop: '1px solid var(--ink-12)', margin: '20px 0' }} />
-            )}
-
-            {/* ── IMAGE BOTTOM — below Deep Dive, above Key Deliverables ───────────
-                To update: set imageBottom for this phase in src/data/caseStudyData.js */}
-            {sheet.imageBottom && (
+            {/* Image Bottom */}
+            {phaseSheet.imageBottom && (
               <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)', lineHeight: 0, marginBottom: 24 }}>
                 <img
-                  src={sheet.imageBottom}
-                  alt={`${sheet.title} — detail`}
+                  src={phaseSheet.imageBottom}
+                  alt={phaseSheet.title}
                   style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
                 />
               </div>
             )}
 
             {/* Key Deliverables */}
-            {sheet.bullets && (
+            {phaseSheet.bullets && (
               <div>
                 <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>Key Deliverables</div>
                 <ul className="phase-bullets">
-                  {sheet.bullets.map((b, i) => (
+                  {phaseSheet.bullets.map((b, i) => (
                     <li key={i} style={{ color: 'var(--ink-80)', fontSize: 14, lineHeight: 1.6 }}>{b}</li>
                   ))}
                 </ul>
-              </div>
-            )}
-
-            {/* UX Law outcome (when sheet is a law) */}
-            {sheet.improvement && (
-              <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--surface)', border: '1px solid var(--ink-12)', marginTop: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
-                <span className="material-icons-round" style={{ color: '#00B894', fontSize: 20 }}>trending_up</span>
-                <div>
-                  <div style={{ fontSize: 11, color: 'var(--ink-40)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: 2 }}>Outcome</div>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: '#00B894' }}>{sheet.outcome}</div>
-                </div>
               </div>
             )}
 
