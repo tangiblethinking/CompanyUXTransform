@@ -124,10 +124,20 @@ function MaturityBar({ stage, animate }) {
         >
           <div>
 
-            {/* ── IMAGE — top of side sheet ─────────────────────────────────────
+            {/* State at This Stage — bullets FIRST */}
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>
+              State at This Stage
+            </div>
+            <ul className="phase-bullets" style={{ marginBottom: 20 }}>
+              {stage.bullets.map((b, i) => (
+                <li key={i} style={{ color: 'var(--ink-80)', fontSize: 14, marginBottom: 6 }}>{b}</li>
+              ))}
+            </ul>
+
+            {/* ── IMAGE — below bullets ─────────────────────────────────────────
                 File : src/components/MaturitySection.jsx
-                Find : const stageImages = { ... }
-                Edit : replace "" next to this stage's number with your image URL
+                Find : const stageImages = { ... } at the top of this file
+                Edit : replace the "" next to this stage number with your URL
                 ──────────────────────────────────────────────────────────────── */}
             <div style={{
               borderRadius: 12,
@@ -147,28 +157,17 @@ function MaturityBar({ stage, animate }) {
               }
             </div>
 
-            {/* Detail text — plain surface card */}
+            {/* Detail text — plain surface card at bottom */}
             <div style={{
               padding: '16px',
               borderRadius: 12,
               background: 'var(--surface)',
               border: '1px solid var(--ink-12)',
-              marginBottom: 20,
             }}>
               <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7, margin: 0 }}>
                 {stage.detail}
               </p>
             </div>
-
-            {/* State at This Stage */}
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>
-              State at This Stage
-            </div>
-            <ul className="phase-bullets">
-              {stage.bullets.map((b, i) => (
-                <li key={i} style={{ color: 'var(--ink-80)', fontSize: 14, marginBottom: 6 }}>{b}</li>
-              ))}
-            </ul>
 
           </div>
         </SideSheet>
