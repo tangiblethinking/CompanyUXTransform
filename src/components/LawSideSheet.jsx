@@ -1,20 +1,56 @@
 import SideSheet from './SideSheet'
 
-/**
- * LawSideSheet — dedicated side sheet for UX Law detail view
- * used exclusively in PlatformsSection.
- *
- * IMAGE URLS — update them in src/data/caseStudyData.js → uxLaws array.
- * Each law object has one field used here:
- *   platformSheetImage: "https://your-url.com/image.jpg"
- *
- * Layout (top → bottom):
- *   1. Image       — full-width, above all text
- *   2. Description — plain surface card
- *   3. Outcome     — light surface card
- */
+// ─────────────────────────────────────────────────────────────────────────────
+// IMAGE URLS FOR THE PLATFORMS SECTION UX LAW SIDE SHEET
+//
+// File : src/components/LawSideSheet.jsx  (this file)
+// How  : Replace the URL string next to each law id with your hosted image URL.
+//
+//   "hicks"       → line 16   Hick's Law
+//   "jakob"       → line 17   Jakob's Law
+//   "fitts"       → line 18   Fitts's Law
+//   "miller"      → line 19   Miller's Law
+//   "tesler"      → line 20   Tesler's Law
+//   "pareto"      → line 21   Pareto Principle
+//   "vonrestorff" → line 22   Von Restorff Effect
+//   "serial"      → line 23   Serial Position Effect
+// ─────────────────────────────────────────────────────────────────────────────
+const lawImages = {
+  hicks:       "",
+  jakob:       "",
+  fitts:       "",
+  miller:      "",
+  tesler:      "",
+  pareto:      "",
+  vonrestorff: "",
+  serial:      "",
+}
+
+// Checkerboard placeholder — renders when lawImages[id] is empty
+// Remove this once you have real URLs
+const PLACEHOLDER = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="220"
+    style={{ display: 'block' }}
+  >
+    <defs>
+      <pattern id="checker" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <rect width="20" height="20" fill="#e2e5ec" />
+        <rect x="20" width="20" height="20" fill="#eceef2" />
+        <rect y="20" width="20" height="20" fill="#eceef2" />
+        <rect x="20" y="20" width="20" height="20" fill="#e2e5ec" />
+      </pattern>
+    </defs>
+    <rect width="100%" height="220" fill="url(#checker)" />
+  </svg>
+)
+
 export default function LawSideSheet({ law, open, onClose }) {
   if (!law) return null
+
+  const imageUrl = lawImages[law.id]
 
   return (
     <SideSheet
@@ -26,30 +62,28 @@ export default function LawSideSheet({ law, open, onClose }) {
     >
       <div>
 
-        {/* ── IMAGE ─────────────────────────────────────────────────────────────
-            File : src/data/caseStudyData.js
-            Array: uxLaws
-            Field: platformSheetImage
-            Find the law by its id (e.g. id: "jakob") and replace the URL value.
-            ──────────────────────────────────────────────────────────────────── */}
-        {law.platformSheetImage && (
-          <div style={{
-            borderRadius: 12,
-            overflow: 'hidden',
-            border: '1px solid var(--ink-12)',
-            background: 'var(--surface)',
-            lineHeight: 0,
-            marginBottom: 16,
-          }}>
-            <img
-              src={law.platformSheetImage}
-              alt={`${law.name} example`}
-              style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
-            />
-          </div>
-        )}
+        {/* ── IMAGE SLOT — full width at top ───────────────────────────────────
+            Replace the empty string for this law in lawImages (lines 16–23)
+            with your hosted image URL e.g. "https://cdn.example.com/img.jpg" */}
+        <div style={{
+          borderRadius: 12,
+          overflow: 'hidden',
+          border: '1px solid var(--ink-12)',
+          background: 'var(--surface)',
+          lineHeight: 0,
+          marginBottom: 16,
+        }}>
+          {imageUrl
+            ? <img
+                src={imageUrl}
+                alt={law.name}
+                style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
+              />
+            : PLACEHOLDER
+          }
+        </div>
 
-        {/* Description — plain surface card, no colour tint */}
+        {/* Description — plain surface card */}
         <div style={{
           padding: '16px',
           borderRadius: 12,
