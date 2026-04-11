@@ -79,8 +79,8 @@ export default function BeforeAfterSlider({ beforeSrc, afterSrc, height = 220 })
         }
       </div>
 
-      {/* Before chip — shows when before image is >= 50% visible (pct <= 50) */}
-      {pct <= 50 && (
+      {/* Before chip — shows when handle is right of center (after dominates, pct >= 50) */}
+      {pct >= 50 && (
         <div style={{
           position: 'absolute', top: 12, left: 12,
           background: 'rgba(13,17,23,0.75)', color: '#fff',
@@ -91,8 +91,8 @@ export default function BeforeAfterSlider({ beforeSrc, afterSrc, height = 220 })
         </div>
       )}
 
-      {/* After chip — shows when after image is >= 50% visible (pct >= 50) */}
-      {pct >= 50 && (
+      {/* After chip — shows when handle is left of center (before dominates, pct <= 50) */}
+      {pct <= 50 && (
         <div style={{
           position: 'absolute', top: 12, right: 12,
           background: 'rgba(13,17,23,0.75)', color: '#fff',
