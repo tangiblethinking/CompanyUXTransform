@@ -20,6 +20,10 @@ export const uxLaws = [
     outcome: "Conversion rate +13%",
     color: "#0F7AEB",
     x: 20, y: 18,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     // IMAGE URLS — replace these placeholders with your own hosted image links
     imagePlatforms: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/45da0809-b24d-4b13-b231-772f6babe6c0.png?h=0f40e3ba365a92fc80425832236eba8b",
     platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
@@ -35,6 +39,10 @@ export const uxLaws = [
     outcome: "Support tickets –92%",
     color: "#6C63FF",
     x: 72, y: 12,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
@@ -49,6 +57,10 @@ export const uxLaws = [
     outcome: "Task time 120s → <25s",
     color: "#00B894",
     x: 48, y: 8,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f0fff8/00B894?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f0fff8/00B894?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
@@ -63,6 +75,10 @@ export const uxLaws = [
     outcome: "Signup completion +33%",
     color: "#E17055",
     x: 25, y: 55,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/fff5f0/E17055?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/fff5f0/E17055?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
@@ -77,6 +93,10 @@ export const uxLaws = [
     outcome: "Cancellations –21%",
     color: "#0F7AEB",
     x: 76, y: 48,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
@@ -91,6 +111,10 @@ export const uxLaws = [
     outcome: "Revenue –17% → +2%",
     color: "#6C63FF",
     x: 50, y: 75,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
@@ -105,6 +129,10 @@ export const uxLaws = [
     outcome: "KPI discoverability +100%",
     color: "#00B894",
     x: 82, y: 75,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f0fff8/00B894?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f0fff8/00B894?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
@@ -119,6 +147,10 @@ export const uxLaws = [
     outcome: "Task success → ~100%",
     color: "#E17055",
     x: 15, y: 82,
+    // Before/After slider images for the UX Law side sheet in LawMap section
+    // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
+    imageBefore: "",
+    imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/fff5f0/E17055?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/fff5f0/E17055?text=Platform+Sheet+Image",
     imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",

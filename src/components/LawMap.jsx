@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import { uxLaws } from '../data/caseStudyData'
 import SideSheet from './SideSheet'
+import BeforeAfterSlider from './BeforeAfterSlider'
 
 function LawTooltip({ law, anchor }) {
   if (!law || !anchor) return null
@@ -162,10 +163,40 @@ export default function LawMap() {
         {selected && (
           <div>
 
-            {/* Platforms Applied — label + chips + Image 1 flush below */}
-            <div style={{ marginBottom: 20 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>Platforms Applied</div>
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+            {/* 1 — MEASURED OUTCOME — top of sheet */}
+            <div style={{ padding: '14px 18px', borderRadius: 12, background: 'var(--surface)', border: '1px solid var(--ink-12)', display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
+              <span className="material-icons-round" style={{ color: '#00B894', fontSize: 18 }}>trending_up</span>
+              <div>
+                <div style={{ fontSize: 10, color: 'var(--ink-40)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: 2 }}>Measured Outcome</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#00B894' }}>{selected.outcome}</div>
+              </div>
+            </div>
+
+            {/* 2 — BEFORE / AFTER SLIDER
+                ┌─────────────────────────────────────────────────────────────┐
+                │ To update: open src/data/caseStudyData.js                  │
+                │ Find this law by id (e.g. id: "hicks") in the uxLaws array │
+                │ Set imageBefore: "https://your-url.com/before.jpg"         │
+                │ Set imageAfter:  "https://your-url.com/after.jpg"          │
+                └─────────────────────────────────────────────────────────────┘ */}
+            <div style={{ marginBottom: 16 }}>
+              <BeforeAfterSlider
+                beforeSrc={selected.imageBefore || ""}
+                afterSrc={selected.imageAfter || ""}
+                height={200}
+              />
+            </div>
+
+            {/* 3 — WHAT WE CHANGED */}
+            <div style={{ marginBottom: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 8 }}>What We Changed</div>
+              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7, margin: 0 }}>{selected.improvement}</p>
+            </div>
+
+            {/* 4 — PLATFORMS APPLIED */}
+            <div style={{ marginBottom: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 8 }}>Platforms Applied</div>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {selected.platform.map(p => {
                   const colors = { website: '#0F7AEB', portal: '#6C63FF', dashboard: '#00B894' }
                   const labels = { website: 'Acquisition Website', portal: 'Account Portal', dashboard: 'Ambassador Dashboard' }
@@ -176,49 +207,12 @@ export default function LawMap() {
                   )
                 })}
               </div>
-              {/* ── IMAGE 1 — below "Platforms Applied" chips ────────────────────────
-                  To update: set imagePlatforms for this law in src/data/caseStudyData.js */}
-              {selected.imagePlatforms && (
-                <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)', lineHeight: 0 }}>
-                  <img
-                    src={selected.imagePlatforms}
-                    alt={`${selected.name} — platforms applied`}
-                    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
-                  />
-                </div>
-              )}
             </div>
 
-            {/* The Principle */}
-            <div style={{ padding: '16px', borderRadius: 12, background: `${selected.color}08`, border: `1px solid ${selected.color}22`, marginBottom: 20 }}>
+            {/* 5 — THE PRINCIPLE — tinted card at bottom */}
+            <div style={{ padding: '16px', borderRadius: 12, background: `${selected.color}08`, border: `1px solid ${selected.color}22` }}>
               <div style={{ fontSize: 13, fontWeight: 600, color: selected.color, marginBottom: 6 }}>The Principle</div>
-              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7 }}>{selected.description}</p>
-            </div>
-
-            {/* What We Changed — label + paragraph + Image 2 flush below */}
-            <div style={{ marginBottom: 20 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: 'var(--ink-40)', marginBottom: 10 }}>What We Changed</div>
-              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7, marginBottom: 12 }}>{selected.improvement}</p>
-              {/* ── IMAGE 2 — below the "What We Changed" paragraph ──────────────────
-                  To update: set imageAfter for this law in src/data/caseStudyData.js */}
-              {selected.imageAfter && (
-                <div style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--ink-12)', background: 'var(--surface)', lineHeight: 0 }}>
-                  <img
-                    src={selected.imageAfter}
-                    alt={`${selected.name} — after improvement`}
-                    style={{ display: 'block', width: '100%', height: 'auto', objectFit: 'cover' }}
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Measured Outcome — light outlined card (not dark) */}
-            <div style={{ padding: '16px 20px', borderRadius: 12, background: 'var(--surface)', border: '1px solid var(--ink-12)', display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span className="material-icons-round" style={{ color: '#00B894', fontSize: 20 }}>trending_up</span>
-              <div>
-                <div style={{ fontSize: 11, color: 'var(--ink-40)', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: 2 }}>Measured Outcome</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#00B894' }}>{selected.outcome}</div>
-              </div>
+              <p style={{ fontSize: 14, color: 'var(--ink-80)', lineHeight: 1.7, margin: 0 }}>{selected.description}</p>
             </div>
 
           </div>
