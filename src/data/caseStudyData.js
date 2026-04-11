@@ -22,8 +22,8 @@ export const uxLaws = [
     x: 20, y: 18,
     // Before/After slider images for the UX Law side sheet in LawMap section
     // Edit imageBefore and imageAfter URLs in src/data/caseStudyData.js
-    imageBefore: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/78ec3665-de56-4901-92c4-88ab67b1c9ae.png?h=61a4cfe7cb2ca011c898f90ea72b5e25",
-    imageAfter: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/16947893-dffd-468e-9b67-2703cf4cb722.png?h=ccce7586f67aa12eebdc3f05b7a69197",
+    imageBefore: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/0470e9be-a0b7-4cf0-98eb-c104a01f2a91.png?h=d750fb96da2824cedbf2c4b90073910c",
+    imageAfter: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/16fb8aae-0069-4e94-86c9-162db93e31e9.png?h=1ed1f9ade63c5e8de72b60dab7e042b8",
     // IMAGE URLS — replace these placeholders with your own hosted image links
     imagePlatforms: "https://cdn.myportfolio.com/abc1e0ab-7370-4502-8c78-92428397bf66/45da0809-b24d-4b13-b231-772f6babe6c0.png?h=0f40e3ba365a92fc80425832236eba8b",
     platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
@@ -45,7 +45,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
     id: "fitts",
@@ -63,7 +63,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f0fff8/00B894?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f0fff8/00B894?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
     id: "miller",
@@ -81,7 +81,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/fff5f0/E17055?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/fff5f0/E17055?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
     id: "tesler",
@@ -99,7 +99,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f0f4ff/0F7AEB?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
     id: "pareto",
@@ -117,7 +117,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f5f0ff/6C63FF?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
     id: "vonrestorff",
@@ -135,7 +135,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/f0fff8/00B894?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/f0fff8/00B894?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
   {
     id: "serial",
@@ -153,7 +153,7 @@ export const uxLaws = [
     imageAfter: "",
     imagePlatforms: "https://placehold.co/480x220/fff5f0/E17055?text=Platforms+Applied+Image",
     platformSheetImage: "https://placehold.co/480x220/fff5f0/E17055?text=Platform+Sheet+Image",
-    imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
+    //imageAfter: "https://placehold.co/480x220/f0fff8/00B894?text=After+Image",
   },
 ];
 
