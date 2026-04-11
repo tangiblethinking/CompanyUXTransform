@@ -16,7 +16,7 @@ export const uxLaws = [
     short: "More choices = more time",
     description: "The time it takes to make a decision increases with the number and complexity of choices.",
     platform: ["website", "dashboard"],
-    improvement: "Simplified navigation from 18 top-level items to 5, reducing decision fatigue on the acquisition website and ambassador dashboard.",
+    improvement: "Simplified navigation from 30+ top-level items to 8, reducing decision fatigue on the navigating website and product discovery.",
     outcome: "Conversion rate +13%",
     color: "#0F7AEB",
     x: 20, y: 18,
@@ -245,7 +245,7 @@ export const phases = [
     icon: "devices",
     color: "#0F7AEB",
     summary: "Applied psychological principles across all 3 platforms — each improvement mapped to a specific UX law and measurable outcome.",
-    details: "Three platforms were redesigned simultaneously: the acquisition website (conversion), the account portal (retention), and the ambassador dashboard (performance). Each improvement applied targeted psychological principles — from Goal-Gradient Effect on checkout to Von Restorff Effect on KPI surfaces.",
+    details: "Three platforms were redesigned simultaneously: the acquisition website (conversion and shopping), the account portal (retention), and the ambassador dashboard (performance). Each improvement applied targeted psychological principles — from Goal-Gradient Effect on checkout to Von Restorff Effect on KPI surfaces.",
     laws: ["fitts", "hicks", "pareto"],
     bullets: [
       "Acquisition website: simplified nav, optimized checkout (Goal-Gradient Effect)",
